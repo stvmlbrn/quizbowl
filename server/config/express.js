@@ -42,11 +42,6 @@ module.exports = (app) => {
   app.use(function (err, req, res, next) {
     logger.error(err.status || 500 + ' ' + util.inspect(err));
 
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: env === 'development' ? err : {},
-      title: 'error'
-    });
+    res.status(err.status || 500).json({ name: err.name, message: err.message });
   });
 };
