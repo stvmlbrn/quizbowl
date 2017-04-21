@@ -7,6 +7,7 @@ import Index from './containers';
 
 import '../css/bootstrap.css';
 import '../css/main.css';
+import '../css/font-awesome.css';
 
 render(
   <Router history={hashHistory}>
