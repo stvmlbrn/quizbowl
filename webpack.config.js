@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'client/src/js/'),
@@ -17,7 +16,6 @@ module.exports = {
   output: {
     path: PATHS.build,
     filename: '[name].[hash].js',
-    //publicPath: 'build/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
