@@ -14,8 +14,8 @@ module.exports = (app) => {
   app.locals.env = env;
   app.locals.pretty = env === 'development';
 
-  app.set('views', `${appRoot}/server/views`);
-  app.set('view engine', 'pug');
+  //app.set('views', `${appRoot}/client/public/build`);
+  //app.set('view engine', 'ejs');
   app.set('trust proxy', 'loopback');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
@@ -25,7 +25,7 @@ module.exports = (app) => {
     extended: true
   }));
   app.use(compress());
-  app.use(express.static(`${appRoot}/client/public`));
+  app.use(express.static(`${appRoot}/client/public/build`));
 
   app.use(helmet());
   app.use(methodOverride());
